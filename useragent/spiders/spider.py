@@ -44,7 +44,7 @@ class UaSpider(scrapy.Spider):
         for url in self.start_urls:
             user_agent = random.choice(user_agent_lint)  # 随机ua
             headers = {"User-Agent": user_agent}
-            print user_agent
+
             yield scrapy.Request(url, callback=self.parse, headers=headers)
         #ua_name = response.url.split('=')[-1]
 #        for version in response.xpath('//tbody//tr//td[2]/text()').extract():
